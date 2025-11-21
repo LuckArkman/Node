@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "17qU8oAR2Hw=",
+  "success": true,
+  "projectFilePath": "/mnt/8AA2CEB6A2CEA5D3/Node/Brain/Brain.csproj",
+  "expectedPackageFiles": [
+    "/home/mplopes/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.16/microsoft.aspnetcore.app.ref.8.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

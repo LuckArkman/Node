@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "BU7C8U7zix4=",
+  "success": true,
+  "projectFilePath": "/mnt/8AA2CEB6A2CEA5D3/Node/Core/Core.csproj",
+  "expectedPackageFiles": [
+    "/home/mplopes/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.16/microsoft.aspnetcore.app.ref.8.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}
