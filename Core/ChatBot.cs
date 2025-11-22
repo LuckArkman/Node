@@ -257,9 +257,9 @@ public class ChatBot : IChatBot
                 targets[i] = new Tensor(targetData, new int[] { intents.Length });
             }
 
-            neuralNetwork.Train(inputs, targets, epochs: 100, learningRate: 0.005);
+            var tr = neuralNetwork.Train(inputs, targets, epochs: 500, learningRate: 0.001);
             neuralNetwork.SaveModel(modelPath);
-            return "";
+            return tr;
         }
 
         private void LoadVocabularyAndResponses()

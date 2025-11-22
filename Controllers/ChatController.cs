@@ -1,9 +1,6 @@
-using Dtos;
+using Dtos; // Certifique-se que este namespace existe e contem a classe Input
 using Interfaces;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace Controllers;
 
@@ -12,22 +9,29 @@ namespace Controllers;
 public class ChatController : ControllerBase
 {
     private readonly IChatBot _chatBot;
+    
     public ChatController(IChatBot chatBot)
     {
         _chatBot = chatBot;
     }
 
-    [HttpGet("Trainer")]
-    public async Task<IActionResult?> OnTrainer()
+    // Rota para treinar o modelo
+    [HttpGet("Train")] // Renomeado para evitar conflito
+    public async Task<IActionResult> OnTrainer()
     {
-        var on = await _chatBot.Train();
-        return Ok(on);
+        var result = await _chatBot.Train();
+        return Ok(result);
     }
     
-    [HttpGet("Trainer")]
-    public async Task<IActionResult?> OnResponse([FromBody] Input input)
+    // Rota para conversar
+    // Alterado para HttpPost porque recebe um objeto [FromBody]
+    [HttpPost("Respond")] 
+    public async Task<IActionResult> OnResponse([FromBody] Input input)
     {
-        var on = await _chatBot.Respond(input.text);
-        return Ok(on);
+        if (string.IsNullOrWhiteSpace(input.text))
+            return BadRequest("O texto de entrada não pode estar vazio.");
+
+        var response = await _chatBot.Respond(input.text);
+        return Ok(response);
     }
 }

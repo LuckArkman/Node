@@ -84,7 +84,7 @@ public class NeuralNetwork
             return new Tensor(outputData, new int[] { outputSize });
         }
 
-        public void Train(Tensor[] inputs, Tensor[] targets, int epochs, double learningRate)
+        public string Train(Tensor[] inputs, Tensor[] targets, int epochs, double learningRate)
         {
             for (int epoch = 0; epoch < epochs; epoch++)
             {
@@ -148,6 +148,8 @@ public class NeuralNetwork
                     biasHidden = new Tensor(newBiasHiddenData, new int[] { hiddenSize });
                 }
             }
+
+            return "Treinamento Completo";
         }
 
         private Tensor ComputeHidden(Tensor input)
