@@ -1,10 +1,11 @@
 using System.Diagnostics;
 using System.Net.Mime;
 using Brain;
+using Interfaces;
 
 namespace Core;
 
-public class ChatBot
+public class ChatBot : IChatBot
     {
         private readonly NeuralNetwork neuralNetwork;
         private readonly List<string> vocabulary;
@@ -145,16 +146,15 @@ public class ChatBot
             };
         }
 
-        public void Train()
+        public async Task<string> Train()
         {
             string modelPath = Path.Combine(Environment.CurrentDirectory, "chatbot_model.csv");
             Console.WriteLine(modelPath);
             if (neuralNetwork.LoadModel(modelPath))
             {
-                Console.WriteLine("Modelo carregado com sucesso. Pulando treinamento.");
-                // Carregar vocabulário e respostas, já que o modelo foi carregado
                 LoadVocabularyAndResponses();
-                return;
+                return "Modelo carregado com sucesso. Pulando treinamento.";
+                // Carregar vocabulário e respostas, já que o modelo foi carregado
             }
 
             var trainingData = GetTrainingData();
@@ -259,6 +259,7 @@ public class ChatBot
 
             neuralNetwork.Train(inputs, targets, epochs: 100, learningRate: 0.005);
             neuralNetwork.SaveModel(modelPath);
+            return "";
         }
 
         private void LoadVocabularyAndResponses()
@@ -351,7 +352,7 @@ public class ChatBot
             }
         }
 
-        public string Respond(string inputText)
+        public async Task<string> Respond(string inputText)
         {
             Tensor input = TextToTensor(inputText);
             Tensor output = neuralNetwork.Forward(input);

@@ -1,0 +1,12 @@
+/mnt/8AA2CEB6A2CEA5D3/Node/Brain/bin/Debug/net8.0/Brain.deps.json
+/mnt/8AA2CEB6A2CEA5D3/Node/Brain/bin/Debug/net8.0/Brain.dll
+/mnt/8AA2CEB6A2CEA5D3/Node/Brain/bin/Debug/net8.0/Brain.pdb
+/mnt/8AA2CEB6A2CEA5D3/Node/Brain/obj/Debug/net8.0/Brain.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/8AA2CEB6A2CEA5D3/Node/Brain/obj/Debug/net8.0/Brain.AssemblyInfoInputs.cache
+/mnt/8AA2CEB6A2CEA5D3/Node/Brain/obj/Debug/net8.0/Brain.AssemblyInfo.cs
+/mnt/8AA2CEB6A2CEA5D3/Node/Brain/obj/Debug/net8.0/Brain.csproj.CoreCompileInputs.cache
+/mnt/8AA2CEB6A2CEA5D3/Node/Brain/obj/Debug/net8.0/Brain.sourcelink.json
+/mnt/8AA2CEB6A2CEA5D3/Node/Brain/obj/Debug/net8.0/Brain.dll
+/mnt/8AA2CEB6A2CEA5D3/Node/Brain/obj/Debug/net8.0/refint/Brain.dll
+/mnt/8AA2CEB6A2CEA5D3/Node/Brain/obj/Debug/net8.0/Brain.pdb
+/mnt/8AA2CEB6A2CEA5D3/Node/Brain/obj/Debug/net8.0/ref/Brain.dll
