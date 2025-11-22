@@ -1,11 +1,46 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "Brain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Brain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Brain.dll": {}
+        }
+      },
+      "Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Interfaces.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Brain/1.0.0": {
+      "type": "project",
+      "path": "../Brain/Brain.csproj",
+      "msbuildProject": "../Brain/Brain.csproj"
+    },
+    "Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../Interfaces/Interfaces.csproj",
+      "msbuildProject": "../Interfaces/Interfaces.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "Brain >= 1.0.0",
+      "Interfaces >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/home/mplopes/.nuget/packages/": {}
@@ -32,7 +67,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/mnt/8AA2CEB6A2CEA5D3/Node/Brain/Brain.csproj": {
+              "projectPath": "/mnt/8AA2CEB6A2CEA5D3/Node/Brain/Brain.csproj"
+            },
+            "/mnt/8AA2CEB6A2CEA5D3/Node/Interfaces/Interfaces.csproj": {
+              "projectPath": "/mnt/8AA2CEB6A2CEA5D3/Node/Interfaces/Interfaces.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

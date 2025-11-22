@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Brain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0be984b0751a036e59b293ed7ab78b1d16f10bf0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b33b503744405014945ba92c70b27b461d803b5d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Brain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Brain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

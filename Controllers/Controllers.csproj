@@ -6,4 +6,20 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Dtos\Dtos.csproj" />
+      <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.AspNetCore.Http.Results">
+        <HintPath>..\..\..\..\home\mplopes\.nuget\packages\microsoft.aspnetcore.app.ref\8.0.16\ref\net8.0\Microsoft.AspNetCore.Http.Results.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
