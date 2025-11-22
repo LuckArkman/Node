@@ -4,12 +4,9 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Serviços
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-
-// CORREÇÃO 1: Alterado de Scoped para Singleton
-// Isso garante que o treinamento do bot seja mantido na memória entre as requisições.
 builder.Services.AddSingleton<IChatBot>(sp =>
 {
     const int inputSize = 100;
