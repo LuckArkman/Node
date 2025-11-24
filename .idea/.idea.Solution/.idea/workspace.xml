@@ -10,8 +10,168 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="107c70b1-e887-4519-93ac-4090e021df25" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Application/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brain/Tensor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Brain/Tensor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dtos/ClientMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dtos/NodeAuthResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dtos/PongResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Solution/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Solution/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Application.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Properties/launchSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.staticwebassets.endpoints.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Brain.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Brain.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Controllers.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Controllers.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Core.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Dtos.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Dtos.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Interfaces.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Interfaces.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.AspNetCore.JsonPatch.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.AspNetCore.Razor.Language.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.CodeAnalysis.Razor.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.CodeAnalysis.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.DotNet.PlatformAbstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.Extensions.Caching.Memory.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.Extensions.Localization.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.Extensions.Localization.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.Extensions.ObjectPool.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.Extensions.Options.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.Extensions.WebEncoders.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Microsoft.OpenApi.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Newtonsoft.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/System.Security.Cryptography.Pkcs.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/System.Security.Cryptography.Xml.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Applicat.44B5EDA2.Up2Date" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.GlobalUsings.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.MvcApplicationPartsAssemblyInfo.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.genruntimeconfig.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/apphost" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/rbcswa.dswa.cache.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/ref/Application.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/refint/Application.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/rjsmcshtml.dswa.cache.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/rjsmrazor.dswa.cache.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/rpswa.dswa.cache.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/staticwebassets.build.endpoints.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/staticwebassets.build.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/staticwebassets.build.json.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/project.assets.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/project.packagespec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brain/bin/Debug/net8.0/Brain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Brain/bin/Debug/net8.0/Brain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brain/bin/Debug/net8.0/Brain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Brain/bin/Debug/net8.0/Brain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/Brain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/Brain.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/Brain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/Brain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/Brain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/Brain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/Brain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/Brain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/Brain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/Brain.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/ref/Brain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/ref/Brain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/refint/Brain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Brain/obj/Debug/net8.0/refint/Brain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ChatController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ChatController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/bin/Debug/net8.0/Controllers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/bin/Debug/net8.0/Controllers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/bin/Debug/net8.0/Controllers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/bin/Debug/net8.0/Controllers.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/bin/Debug/net8.0/Dtos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/bin/Debug/net8.0/Dtos.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/bin/Debug/net8.0/Dtos.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/bin/Debug/net8.0/Dtos.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/bin/Debug/net8.0/Interfaces.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/bin/Debug/net8.0/Interfaces.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/bin/Debug/net8.0/Interfaces.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/bin/Debug/net8.0/Interfaces.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/Controllers.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/Controllers.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/Controllers.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/Controllers.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/Controllers.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/Controllers.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/Controllers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/Controllers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/Controllers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/Controllers.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/Controllers.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/Controllers.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/ref/Controllers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/ref/Controllers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/refint/Controllers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/obj/Debug/net8.0/refint/Controllers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/ChatBot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/ChatBot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Brain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Brain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Brain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Brain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Core.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Core.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Interfaces.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Interfaces.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Interfaces.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/net8.0/Interfaces.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Core.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Core.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net8.0/Core.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net8.0/ref/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net8.0/ref/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net8.0/refint/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net8.0/refint/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dtos/bin/Debug/net8.0/Dtos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/bin/Debug/net8.0/Dtos.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dtos/bin/Debug/net8.0/Dtos.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/bin/Debug/net8.0/Dtos.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/Dtos.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/Dtos.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/Dtos.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/Dtos.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/Dtos.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/Dtos.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/Dtos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/Dtos.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/Dtos.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/Dtos.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/Dtos.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/Dtos.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/ref/Dtos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/ref/Dtos.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/refint/Dtos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net8.0/refint/Dtos.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enums/obj/Debug/net8.0/Enums.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Enums/obj/Debug/net8.0/Enums.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enums/obj/Debug/net8.0/Enums.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Enums/obj/Debug/net8.0/Enums.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/IChatBot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IChatBot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/bin/Debug/net8.0/Interfaces.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/bin/Debug/net8.0/Interfaces.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/bin/Debug/net8.0/Interfaces.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/bin/Debug/net8.0/Interfaces.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/Interfaces.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/Interfaces.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/Interfaces.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/Interfaces.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/Interfaces.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/Interfaces.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/Interfaces.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/Interfaces.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/Interfaces.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/Interfaces.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/ref/Interfaces.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/ref/Interfaces.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/refint/Interfaces.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/obj/Debug/net8.0/refint/Interfaces.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Solution.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Solution.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +201,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;MPLopes&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/8AA2CEB6A2CEA5D3/Galileu.AI/ Galileu.sln&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -156,6 +317,8 @@
       <updated>1763762541347</updated>
       <workItem from="1763762543351" duration="7271000" />
       <workItem from="1763777651287" duration="770000" />
+      <workItem from="1763824073389" duration="82000" />
+      <workItem from="1763948834811" duration="5615000" />
     </task>
     <servers />
   </component>

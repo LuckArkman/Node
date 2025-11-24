@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Brain\Brain.csproj" />
+      <ProjectReference Include="..\Dtos\Dtos.csproj" />
       <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
     </ItemGroup>
 

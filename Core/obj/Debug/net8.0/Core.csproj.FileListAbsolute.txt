@@ -16,3 +16,5 @@
 /mnt/8AA2CEB6A2CEA5D3/Node/Core/obj/Debug/net8.0/refint/Core.dll
 /mnt/8AA2CEB6A2CEA5D3/Node/Core/obj/Debug/net8.0/Core.pdb
 /mnt/8AA2CEB6A2CEA5D3/Node/Core/obj/Debug/net8.0/ref/Core.dll
+/mnt/8AA2CEB6A2CEA5D3/Node/Core/bin/Debug/net8.0/Dtos.dll
+/mnt/8AA2CEB6A2CEA5D3/Node/Core/bin/Debug/net8.0/Dtos.pdb

@@ -18,8 +18,7 @@ builder.Services.AddSingleton<IChatBot>(sp =>
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo 
-    { 
-        // CORREÇÃO 2: Metadados atualizados para refletir o projeto real
+    {
         Title = "ChatBot API", 
         Version = "v1", 
         Description = "API de ChatBot com Rede Neural para responder perguntas gerais."
@@ -39,10 +38,6 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// 2. Pipeline de Requisição
-
-// CORREÇÃO 3: Adicionado o Middleware do Swagger
-// Sem isso, a página /swagger retorna 404.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
