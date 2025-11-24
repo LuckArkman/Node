@@ -12,6 +12,16 @@
           "bin/placeholder/Brain.dll": {}
         }
       },
+      "Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Dtos.dll": {}
+        }
+      },
       "Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -30,6 +40,11 @@
       "path": "../Brain/Brain.csproj",
       "msbuildProject": "../Brain/Brain.csproj"
     },
+    "Dtos/1.0.0": {
+      "type": "project",
+      "path": "../Dtos/Dtos.csproj",
+      "msbuildProject": "../Dtos/Dtos.csproj"
+    },
     "Interfaces/1.0.0": {
       "type": "project",
       "path": "../Interfaces/Interfaces.csproj",
@@ -39,6 +54,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Brain >= 1.0.0",
+      "Dtos >= 1.0.0",
       "Interfaces >= 1.0.0"
     ]
   },
@@ -70,6 +86,9 @@
           "projectReferences": {
             "/mnt/8AA2CEB6A2CEA5D3/Node/Brain/Brain.csproj": {
               "projectPath": "/mnt/8AA2CEB6A2CEA5D3/Node/Brain/Brain.csproj"
+            },
+            "/mnt/8AA2CEB6A2CEA5D3/Node/Dtos/Dtos.csproj": {
+              "projectPath": "/mnt/8AA2CEB6A2CEA5D3/Node/Dtos/Dtos.csproj"
             },
             "/mnt/8AA2CEB6A2CEA5D3/Node/Interfaces/Interfaces.csproj": {
               "projectPath": "/mnt/8AA2CEB6A2CEA5D3/Node/Interfaces/Interfaces.csproj"

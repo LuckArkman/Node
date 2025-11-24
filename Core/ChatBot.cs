@@ -1,18 +1,26 @@
 using System.Diagnostics;
 using System.Net.Mime;
+using System.Net.WebSockets;
+using System.Text;
+using System.Text.Json;
 using Brain;
+using Dtos;
 using Interfaces;
 
 namespace Core;
 
 public class ChatBot : IChatBot
     {
+        public NodeAuthResponse _AuthResponse { get; set; }
+        private ClientWebSocket _clientWebSocket { get; set; }
         private readonly NeuralNetwork neuralNetwork;
         private readonly List<string> vocabulary;
         private readonly int inputSize;
         private readonly Dictionary<int, List<string>> intentResponses;
         private Random _random = new Random();
         private readonly string[] intents;
+        private bool _isConnected = false;
+        private CancellationTokenSource _cancellationTokenSource;
 
         public ChatBot(int inputSize, int hiddenSize, int outputSize)
         {
@@ -30,6 +38,9 @@ public class ChatBot : IChatBot
             {
                 intentResponses[i] = new List<string>();
             }
+            
+            _clientWebSocket = new ClientWebSocket();
+            _cancellationTokenSource = new CancellationTokenSource();
         }
 
         public static List<(string input, string output)> GetTrainingData()
@@ -222,13 +233,12 @@ public class ChatBot : IChatBot
                          input.Contains("i like you"))
                     intent = intentMap["exclamação positiva"];
                 else
-                    continue; // Ignora entradas não classificadas
+                    continue;
 
                 trainingDataWithIntents.Add((input, intent));
                 intentResponses[intent].Add(output);
             }
-
-            // Construir vocabulário
+            
             foreach (var data in trainingDataWithIntents)
             {
                 string[] words = data.input.ToLower().Split(' ');
@@ -432,6 +442,148 @@ public class ChatBot : IChatBot
             return dynamicResponse;
         }
 
+        public async Task<string> OnConnectServerAsync()
+        {
+            try
+            {
+                if (_clientWebSocket.State == WebSocketState.Open)
+                {
+                    return "Já conectado ao servidor WebSocket.";
+                }
+                if (_clientWebSocket.State != WebSocketState.None)
+                {
+                    _clientWebSocket.Dispose();
+                    _clientWebSocket = new ClientWebSocket();
+                }
+                _clientWebSocket.Options.SetRequestHeader("X-Node-Auth", _AuthResponse.testToken);
+
+                // Conectar ao servidor WebSocket
+                Uri serverUri = new Uri("ws://localhost:5002/ws");
+                await _clientWebSocket.ConnectAsync(serverUri, _cancellationTokenSource.Token);
+
+                _isConnected = true;
+                Console.WriteLine("Conectado ao servidor WebSocket com sucesso!");
+
+                // Iniciar tarefa de escuta de mensagens
+                _ = Task.Run(() => ListenForMessagesAsync(_cancellationTokenSource.Token));
+
+                return "Conexão estabelecida com sucesso!";
+            }
+            catch (Exception ex)
+            {
+                _isConnected = false;
+                return $"Erro ao conectar: {ex.Message}";
+            }
+        }
+
+        private async Task ListenForMessagesAsync(CancellationToken cancellationToken)
+        {
+            var buffer = new byte[1024 * 4];
+        
+            try
+            {
+                while (_clientWebSocket.State == WebSocketState.Open && !cancellationToken.IsCancellationRequested)
+                {
+                    var result = await ReceiveFullMessageAsync(buffer, cancellationToken);
+                
+                    if (result.messageType == WebSocketMessageType.Text)
+                    {
+                        string receivedMessage = Encoding.UTF8.GetString(buffer, 0, result.count);
+                        var message = JsonSerializer.Deserialize<ClientMessage>(receivedMessage);
+                        Console.WriteLine($"Mensagem recebida: {receivedMessage}");
+                        
+                        string response = await Respond(message.content);
+                        var res = new PongResponse
+                        {
+                            Type = "pong_response",
+                            CorrelationId = message.correlationId,
+                            Content = response
+                        };
+                        
+                        await SendMessageAsync(JsonSerializer.Serialize(res), cancellationToken);
+                    }
+                    else if (result.messageType == WebSocketMessageType.Close)
+                    {
+                        Console.WriteLine("Servidor solicitou o fechamento da conexão.");
+                        await CloseConnectionAsync();
+                        break;
+                    }
+                }
+            }
+            catch (OperationCanceledException)
+            {
+                Console.WriteLine("Escuta de mensagens cancelada.");
+            }
+            catch (WebSocketException ex)
+            {
+                Console.WriteLine($"Erro no WebSocket: {ex.Message}");
+                _isConnected = false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao escutar mensagens: {ex.Message}");
+                _isConnected = false;
+            }
+        }
+        
+        private async Task SendMessageAsync(string message, CancellationToken cancellationToken)
+        {
+            try
+            {
+                if (_clientWebSocket.State != WebSocketState.Open)
+                {
+                    Console.WriteLine("WebSocket não está aberto. Estado atual: " + _clientWebSocket.State);
+                    return;
+                }
+
+                byte[] messageBytes = Encoding.UTF8.GetBytes(message);
+                var messageSegment = new ArraySegment<byte>(messageBytes);
+
+                await _clientWebSocket.SendAsync(
+                    messageSegment,
+                    WebSocketMessageType.Text,
+                    true,
+                    cancellationToken
+                );
+
+                Console.WriteLine($"Mensagem enviada: {message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao enviar mensagem: {ex.Message}");
+            }
+        }
+        
+        private async Task<(WebSocketMessageType messageType, int count)> ReceiveFullMessageAsync(
+            byte[] buffer, 
+            CancellationToken cancellationToken)
+        {
+            var messageBuilder = new List<byte>();
+            WebSocketReceiveResult result;
+
+            do
+            {
+                result = await _clientWebSocket.ReceiveAsync(
+                    new ArraySegment<byte>(buffer), 
+                    cancellationToken
+                );
+            
+                messageBuilder.AddRange(buffer.Take(result.Count));
+            
+            } while (!result.EndOfMessage);
+
+            var fullMessage = messageBuilder.ToArray();
+            Array.Copy(fullMessage, buffer, fullMessage.Length);
+
+            return (result.MessageType, fullMessage.Length);
+        }
+
+
+        public void SetToken<T>(T token)
+        {
+            _AuthResponse = token as NodeAuthResponse;
+        }
+
         private Tensor TextToTensor(string text)
         {
             double[] inputData = new double[inputSize];
@@ -461,5 +613,52 @@ public class ChatBot : IChatBot
             }
 
             return new Tensor(inputData, new int[] { inputSize });
+        }
+        
+        public async Task SendManualMessageAsync(string message)
+        {
+            if (!_isConnected || _clientWebSocket.State != WebSocketState.Open)
+            {
+                Console.WriteLine("Não está conectado ao servidor WebSocket.");
+                return;
+            }
+
+            await SendMessageAsync(message, _cancellationTokenSource.Token);
+        }
+
+        public async Task CloseConnectionAsync()
+        {
+            try
+            {
+                if (_clientWebSocket.State == WebSocketState.Open)
+                {
+                    await _clientWebSocket.CloseAsync(
+                        WebSocketCloseStatus.NormalClosure,
+                        "Fechando conexão",
+                        CancellationToken.None
+                    );
+                    Console.WriteLine("Conexão WebSocket fechada com sucesso.");
+                }
+
+                _isConnected = false;
+                _cancellationTokenSource.Cancel();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao fechar conexão: {ex.Message}");
+            }
+        }
+
+        public bool IsConnected()
+        {
+            return _isConnected && _clientWebSocket.State == WebSocketState.Open;
+        }
+
+        // Método para limpar recursos
+        public void Dispose()
+        {
+            _cancellationTokenSource?.Cancel();
+            _cancellationTokenSource?.Dispose();
+            _clientWebSocket?.Dispose();
         }
     }
