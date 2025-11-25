@@ -48,10 +48,7 @@ public class ChatBot : IChatBot
             return new List<(string input, string output)>
             {
                 ("Hello", "Hi! How can I help you today?"),
-                ("Hello", "Hello! What is on your mind?"),
-                ("Hello", "Hey there! Nice to see you!"),
                 ("Hi", "Hello! What is on your mind?"),
-                ("Hi", "Hi! How can I assist you?"),
                 ("Hey", "Hey! What’s up?"),
                 ("Good morning", "Good morning to you too!"),
                 ("Good afternoon", "Good afternoon! Hope you're doing well."),
@@ -458,7 +455,7 @@ public class ChatBot : IChatBot
                 _clientWebSocket.Options.SetRequestHeader("X-Node-Auth", _AuthResponse.testToken);
 
                 // Conectar ao servidor WebSocket
-                Uri serverUri = new Uri("ws://localhost:5002/ws");
+                Uri serverUri = new Uri("ws://72.60.136.27:5002/ws");
                 await _clientWebSocket.ConnectAsync(serverUri, _cancellationTokenSource.Token);
 
                 _isConnected = true;
